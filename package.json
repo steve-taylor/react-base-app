@@ -1,0 +1,84 @@
+{
+  "name": "base-react-app",
+  "version": "0.0.1",
+  "description": "Base structure for React web apps",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steve-taylor/react-base-app.git"
+  },
+  "scripts": {
+    "start": "rm -rf dist && NODE_ENV=development webpack-dev-server --hot --inline",
+    "build": "rm -rf dist && NODE_ENV=production webpack",
+    "build:lib": "webpack --config webpack.lib.js",
+    "test": "NODE_ENV=test jest",
+    "test:tdd": "npm run test -- --watchAll",
+    "test:coverage": "npm run test -- --coverage",
+    "lint": "eslint src",
+    "ci": "npm run test && npm run lint",
+    "prepush": "npm run ci"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss|sass)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "globals": {
+      "__API_BASE_URL__": ""
+    }
+  },
+  "main": "app.js",
+  "author": "Steve Taylor",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "babel-register": "^6.23.0",
+    "classnames": "^2.2.5",
+    "lodash.debounce": "^4.0.8",
+    "react": "^15.4.2",
+    "react-autosuggest": "^9.0.0",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^3.0.2",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-module-resolver": "^2.5.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.3.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "circular-dependency-plugin": "^2.0.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.26.1",
+    "cssnano": "^3.10.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.2",
+    "file-loader": "^0.10.0",
+    "html-webpack-plugin": "^2.28.0",
+    "jest": "^19.0.2",
+    "node-sass": "^4.4.0",
+    "optimize-css-assets-webpack-plugin": "^1.3.0",
+    "pug": "2.0.0-beta9",
+    "pug-loader": "^2.3.0",
+    "react-test-renderer": "^15.4.2",
+    "sass-loader": "^6.0.2",
+    "style-loader": "^0.13.1",
+    "svg-url-loader": "^2.0.1",
+    "uglify-js": "^2.7.5",
+    "uglifyjs-webpack-plugin": "^0.2.0",
+    "unminified-webpack-plugin": "^1.2.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.2.1"
+  }
+}

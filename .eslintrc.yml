@@ -1,0 +1,67 @@
+---
+parser: babel-eslint
+extends: airbnb
+env:
+  es6: true
+ecmaFeatures:
+  experimentalObjectRestSpread: true
+  modules: true
+globals:
+  document: true
+  window: true
+  __API_BASE_URL__: ''
+settings:
+  import/resolver: webpack
+  react:
+    pragma: React
+    version: '15.4.2'
+rules:
+  arrow-parens:
+  - error
+  - as-needed
+  - requireForBlockBody: false
+  indent:
+  - error
+  - 2
+  - SwitchCase: 1
+  max-len:
+  - error
+  - 160
+  no-bitwise:
+  - error
+  - int32Hint: true
+  react/forbid-prop-types:
+  - error
+  - forbid:
+    - array
+  react/jsx-indent:
+  - 2
+  - 2
+  react/jsx-indent-props:
+  - 2
+  - 2
+  react/prop-types:
+  - 2
+  - ignore:
+    - className
+    - style
+    - children
+  jsx-a11y/href-no-hash: 1
+  consistent-return: 0
+  id-length: 0
+  import/extensions: 0
+  import/no-extraneous-dependencies: 0
+  import/no-unresolved: 0
+  import/prefer-default-export: 0
+  no-confusing-arrow: 0
+  no-else-return: 0
+  no-nested-ternary: 0
+  no-param-reassign: 0
+  no-shadow: 0
+  no-underscore-dangle: 0
+  object-curly-spacing: 0
+  padded-blocks: 0
+  react/jsx-filename-extension: 0
+  react/jsx-first-prop-new-line: 0
+  react/jsx-space-before-closing: 0
+  react/jsx-tag-spacing: 0

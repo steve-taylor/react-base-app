@@ -1,0 +1,52 @@
+{
+  "presets": [
+    [
+      "latest",
+      {
+        "es2015": {
+          "loose": true,
+          "modules": false
+        }
+      }
+    ],
+    "stage-2",
+    "react"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        [
+          "transform-react-remove-prop-types",
+          {
+            "mode": "wrap",
+            "ignoreFilenames": [
+              "node_modules"
+            ]
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "latest",
+          {
+            "es2015": {
+              "loose": true
+            }
+          }
+        ]
+      ],
+      "plugins": [
+        [
+          "module-resolver",
+          {
+            "root": [
+              "./lib"
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}
