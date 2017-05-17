@@ -1,4 +1,5 @@
 import React from 'react';
+import {func, shape} from 'prop-types';
 import {withRouter} from 'react-router';
 import {RoutePath, absoluteRoutePath} from '../../Routing';
 
@@ -9,13 +10,11 @@ const Page1 = ({router: {push}}) => (
     <h1>
       Page 1
     </h1>
-    <button onClick={push(absoluteRoutePath(RoutePath.PAGE_2))}>
+    <button onClick={() => push(absoluteRoutePath(RoutePath.PAGE_2))}>
       Next page
     </button>
   </div>
 );
-
-const {func, shape} = React.PropTypes;
 
 Page1.propTypes = {
   router: shape({

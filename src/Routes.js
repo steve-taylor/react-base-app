@@ -10,7 +10,7 @@ const Routes = () => (
   <Router history={browserHistory}>
 
     <Route path="/">
-      <Route path={basePath} component={({children}) => <PageLayout>{children}</PageLayout>}>
+      <Route path={basePath} component={PageLayout}>
         <Route path={RoutePath.PAGE_1} component={Page1}/>
         <Route path={RoutePath.PAGE_2} component={Page2}/>
         <Route path={RoutePath.PAGE_3} component={Page3}/>
