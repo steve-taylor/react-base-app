@@ -61,10 +61,6 @@ module.exports = {
         test: /\.(jpg|png)$/,
         use: 'file-loader?name=[path][name].[hash].[ext]',
       },
-      {
-        test: /\.pug$/,
-        use: 'pug-loader'
-      },
     ],
   },
   resolve: {
@@ -77,7 +73,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/index.pug',
+      template: './src/index.html',
       inject: 'body',
       showErrors: true,
       minify: false,

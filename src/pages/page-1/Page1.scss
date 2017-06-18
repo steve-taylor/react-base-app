@@ -1,0 +1,31 @@
+// These styles are entirely stupid, but they demonstrate the usage of BEM with SASS and React components, and
+// also demonstrate namespacing CSS classes using SASS.
+
+.react-app {
+  &-page1 {
+    margin: 24px;
+
+    &--from-page-3::before {
+      font-size: 10px;
+      font-style: italic;
+      color: #999;
+      content: "Redirected from page 3"
+    }
+
+    &__heading {
+      color: tomato;
+
+      &--from-redirect::after {
+        font-size: 10px;
+        font-style: italic;
+        font-weight: normal;
+        color: #999;
+        content: "(Redirected from /)"
+      }
+    }
+
+    &__button {
+      color: blue;
+    }
+  }
+}

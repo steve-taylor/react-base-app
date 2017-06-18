@@ -1,11 +1,10 @@
+import './Page2.scss';
+
 import React from 'react';
-import {func, shape} from 'prop-types';
-import {withRouter} from 'react-router';
+import ReactRouterPropTypes from '../../util/ReactRouterPropTypes';
 import {RoutePath, absoluteRoutePath} from '../../Routing';
 
-import './page-2.sass';
-
-const Page2 = ({router: {push}}) => (
+const Page2 = ({history: {push}}) => (
   <div className="page2">
     <h1>
       Page 2
@@ -17,9 +16,7 @@ const Page2 = ({router: {push}}) => (
 );
 
 Page2.propTypes = {
-  router: shape({
-    push: func.isRequired,
-  }).isRequired,
+  ...ReactRouterPropTypes,
 };
 
-export default withRouter(Page2);
+export default Page2;

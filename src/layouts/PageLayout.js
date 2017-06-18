@@ -1,6 +1,6 @@
-import React from 'react';
+import './PageLayout.scss';
 
-import './page-layout.sass';
+import React from 'react';
 
 const PageLayout = ({children}) => (
   <div className="page-layout">
