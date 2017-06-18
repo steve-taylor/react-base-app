@@ -6,8 +6,8 @@ import bemify from '../../bemify';
 
 import './Page2.scss';
 
-const Page2 = ({history: {push}}) => (
-  <div className="page2">
+const Page2 = ({history: {push}, bem}) => (
+  <div className={bem()}>
     <h1>
       Page 2
     </h1>

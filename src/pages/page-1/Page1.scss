@@ -4,25 +4,28 @@
 .react-app {
   &-page1 {
     background: #efefef;
-    width: 100%;
 
-    &--some-modifier::before {
-      position: absolute;
-      font-size: 10px;
-      font-style: italic;
-      color: #999;
-      content: "(with some-modifier)"
+    &--some-modifier {
+      &::before {
+        position: absolute;
+        font-size: 10px;
+        font-style: italic;
+        color: #999;
+        content: "(with some-modifier)"
+      }
     }
 
     &__heading {
       color: tomato;
 
-      &--another-modifier::after {
-        font-size: 10px;
-        font-style: italic;
-        font-weight: normal;
-        color: #999;
-        content: "(with another-modifier)"
+      &--another-modifier {
+        &::after {
+          font-size: 10px;
+          font-style: italic;
+          font-weight: normal;
+          color: #999;
+          content: "(with another-modifier)"
+        }
       }
     }
 

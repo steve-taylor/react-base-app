@@ -1,3 +1,6 @@
+$header-height: 50px;
+$footer-height: 80px;
+
 html {
   min-height: 100%;
   display: flex;
@@ -26,22 +29,32 @@ body, p {
   &-page-layout {
     flex: 1;
     display: flex;
-  }
+    flex-direction: column;
 
-  &-page-content {
-    flex: 1;
-    padding-top: 80px;
-  }
+    &__header {
+      position: fixed;
+      width: 100%;
+      height: $header-height;
+      z-index: 1;
+      background: #fff;
 
-  &-page-footer {
-    display: flex;
-    align-items: center;
-    min-height: 50px;
-    color: #fff;
-    font-size: 14px;
+      + * {
+        flex: 1;
+        padding-top: $header-height;
+      }
+    }
 
-    > * {
-      margin: auto;
+    &__footer {
+      display: flex;
+      align-items: center;
+      min-height: $footer-height;
+      background: #666;
+      color: #fff;
+      font-size: 14px;
+
+      > * {
+        margin: auto;
+      }
     }
   }
 }
