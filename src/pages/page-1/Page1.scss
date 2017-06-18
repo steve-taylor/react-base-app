@@ -3,24 +3,26 @@
 
 .react-app {
   &-page1 {
-    margin: 24px;
+    background: #efefef;
+    width: 100%;
 
-    &--from-page-3::before {
+    &--some-modifier::before {
+      position: absolute;
       font-size: 10px;
       font-style: italic;
       color: #999;
-      content: "Redirected from page 3"
+      content: "(with some-modifier)"
     }
 
     &__heading {
       color: tomato;
 
-      &--from-redirect::after {
+      &--another-modifier::after {
         font-size: 10px;
         font-style: italic;
         font-weight: normal;
         color: #999;
-        content: "(Redirected from /)"
+        content: "(with another-modifier)"
       }
     }
 

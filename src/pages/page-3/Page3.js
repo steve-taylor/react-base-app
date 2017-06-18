@@ -1,8 +1,10 @@
-import './Page3.scss';
-
 import React from 'react';
-import ReactRouterPropTypes from '../../util/ReactRouterPropTypes';
+import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import {RoutePath, absoluteRoutePath} from '../../Routing';
+import bemify from '../../bemify';
+
+import './Page3.scss';
 
 const Page3 = ({history: {push}}) => (
   <div className="page2">
@@ -16,7 +18,8 @@ const Page3 = ({history: {push}}) => (
 );
 
 Page3.propTypes = {
+  bem: PropTypes.func.isRequired,
   ...ReactRouterPropTypes,
 };
 
-export default Page3;
+export default bemify(Page3);

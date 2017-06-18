@@ -1,6 +1,7 @@
 # Base React App
 
 Base web app structure using React, Redux, React Router and Webpack.
+It also establishes a pattern for using [BEM](http://getbem.com/) with React.
 
 To use this as a starting point for your React project:
 

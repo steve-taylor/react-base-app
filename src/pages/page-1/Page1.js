@@ -1,13 +1,14 @@
-import './Page1.scss';
-
 import React from 'react';
-import ReactRouterPropTypes from '../../util/ReactRouterPropTypes';
-import bemify from '../../util/bemify';
+import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
+import bemify from '../../bemify';
 import {RoutePath, absoluteRoutePath} from '../../Routing';
 
+import './Page1.scss';
+
 const Page1 = ({bem, history: {push}}) => (
-  <div className={bem(null, {'from-page-3': false})}>
-    <h1 className={bem('heading', 'from-redirect')}>
+  <div className={bem(null, {'some-modifier': true})}>
+    <h1 className={bem('heading', 'another-modifier')}>
       Page 1
     </h1>
     <button className={bem('button')} onClick={() => push(absoluteRoutePath(RoutePath.PAGE_2))}>
@@ -17,7 +18,8 @@ const Page1 = ({bem, history: {push}}) => (
 );
 
 Page1.propTypes = {
+  bem: PropTypes.func.isRequired,
   ...ReactRouterPropTypes,
 };
 
-export default bemify('react-app')(Page1);
+export default bemify(Page1);

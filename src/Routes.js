@@ -7,10 +7,11 @@ import Page3 from './pages/page-3/Page3';
 import {RoutePath, basePath, absoluteRoutePath} from './Routing';
 
 const Routes = () => (
-  <BrowserRouter>
-    <div>
-      <Switch>
-        <Route path={basePath} render={() => (
+  <BrowserRouter className="foobar">
+    <Switch>
+      <Route
+        path={basePath}
+        render={() => (
           <PageLayout>
             <Switch>
               <Route path={absoluteRoutePath(RoutePath.PAGE_1)} component={Page1}/>
@@ -18,15 +19,15 @@ const Routes = () => (
               <Route path={absoluteRoutePath(RoutePath.PAGE_3)} component={Page3}/>
             </Switch>
           </PageLayout>
-        )}/>
+        )}
+      />
 
-        {/* Redirect root path to page 1 */}
-        <Route exact path="/" render={() => <Redirect to={absoluteRoutePath(RoutePath.PAGE_1)}/>}/>
+      {/* Redirect root path to page 1 */}
+      <Route exact path="/" render={() => <Redirect to={absoluteRoutePath(RoutePath.PAGE_1)}/>}/>
 
-        {/* Default case: Page not found */}
-        <Route render={() => <div>Not found :(</div>}/>
-      </Switch>
-    </div>
+      {/* Default case: Page not found */}
+      <Route render={() => <div>Not found :(</div>}/>
+    </Switch>
   </BrowserRouter>
 );
 

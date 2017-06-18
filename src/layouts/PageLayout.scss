@@ -15,33 +15,33 @@ body {
 }
 
 body, p {
-  font-size: 1rem;
+  font-size: 1rem ;
 }
 
-.app {
+.react-app {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
 
-.page-layout {
-  flex: 1;
-  display: flex;
-}
+  &-page-layout {
+    flex: 1;
+    display: flex;
+  }
 
-.page-content {
-  flex: 1;
-  padding-top: 80px;
-}
+  &-page-content {
+    flex: 1;
+    padding-top: 80px;
+  }
 
-.page-footer {
-  display: flex;
-  align-items: center;
-  min-height: 50px;
-  color: #fff;
-  font-size: 14px;
+  &-page-footer {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    color: #fff;
+    font-size: 14px;
 
-  > * {
-    margin: auto;
+    > * {
+      margin: auto;
+    }
   }
 }

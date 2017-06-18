@@ -1,11 +1,17 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import bemify from '../bemify';
+
 import './PageLayout.scss';
 
-import React from 'react';
-
-const PageLayout = ({children}) => (
-  <div className="page-layout">
+const PageLayout = ({bem, children}) => (
+  <div className={bem()}>
     {children}
   </div>
 );
 
-export default PageLayout;
+PageLayout.propTypes = {
+  bem: PropTypes.func.isRequired,
+};
+
+export default bemify(PageLayout);
